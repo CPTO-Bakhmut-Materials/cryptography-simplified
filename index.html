@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Сучасна криптографія</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css?v=32" />
+  <link rel="stylesheet" href="styles.css?v=33" />
 </head>
 <body>
   <!-- Мінімалістичний сегментований індикатор прогресу зверху (замість громіздкої панелі) -->
@@ -579,7 +579,7 @@
 
         <!-- Схема: 3 стовпи криптографії -->
         <div class="slide-svg-wrap">
-          <svg viewBox="0 0 880 140" class="slide-svg" aria-label="Три кити криптографії">
+          <svg viewBox="0 0 880 140" class="slide-svg slide-svg-landscape" aria-label="Три кити криптографії">
             <rect x="10" y="12" width="270" height="116" fill="#F1F5F9" stroke="#CBD5E1"/>
             <rect x="10" y="12" width="6" height="116" fill="#1A73E8"/>
             <text x="32" y="42" fill="#1A73E8" font-size="13" font-weight="bold">01. СИМЕТРИЧНЕ (AES-256)</text>
@@ -598,6 +598,25 @@
             <text x="622" y="68" fill="#1E293B" font-size="12">📄 Пароль ──► [64-символьний Хеш]</text>
             <text x="622" y="96" fill="#64748B" font-size="11">Одностороння функція: неможливо повернути</text>
           </svg>
+          <svg viewBox="0 0 380 264" class="slide-svg slide-svg-portrait" aria-label="Три кити криптографії (вертикальна схема)">
+    <rect x="8" y="8" width="364" height="76" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <rect x="8" y="8" width="6" height="76" fill="#1A73E8"/>
+    <text x="26" y="31" fill="#1A73E8" font-size="13" font-weight="bold">01. СИМЕТРИЧНЕ (AES-256)</text>
+    <text x="26" y="52" fill="#1E293B" font-size="12">🔑 Клієнт ── [Шифротекст] ──► 🔑 Сервер</text>
+    <text x="26" y="72" fill="#64748B" font-size="11">Один спільний ключ для швидкого захисту</text>
+
+    <rect x="8" y="94" width="364" height="76" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <rect x="8" y="94" width="6" height="76" fill="#188038"/>
+    <text x="26" y="117" fill="#188038" font-size="13" font-weight="bold">02. АСИМЕТРИЧНЕ &amp; E2EE</text>
+    <text x="26" y="138" fill="#1E293B" font-size="12">🔓 Публічний замок ≠ 🗝️ Приватний ключ</text>
+    <text x="26" y="158" fill="#64748B" font-size="11">Безпечний обмін ключами у відкритій мережі</text>
+
+    <rect x="8" y="180" width="364" height="76" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <rect x="8" y="180" width="6" height="76" fill="#B06000"/>
+    <text x="26" y="203" fill="#B06000" font-size="13" font-weight="bold">03. ХЕШУВАННЯ (SHA-256)</text>
+    <text x="26" y="224" fill="#1E293B" font-size="12">📄 Пароль ──► [64-символьний Хеш]</text>
+    <text x="26" y="244" fill="#64748B" font-size="11">Одностороння функція: неможливо повернути</text>
+  </svg>
         </div>
       </div>
     </section>
@@ -611,7 +630,7 @@
 
         <!-- Схема: Перехоплення у відкритому каналі проти AES тунелю -->
         <div class="slide-svg-wrap">
-          <svg viewBox="0 0 880 215" class="slide-svg" aria-label="Схема перехоплення трафіку">
+          <svg viewBox="0 0 880 215" class="slide-svg slide-svg-landscape" aria-label="Схема перехоплення трафіку">
             <!-- Без шифрування -->
             <rect x="10" y="10" width="860" height="90" fill="#FCE8E6" stroke="#D93025"/>
             <text x="24" y="32" fill="#D93025" font-size="12" font-weight="bold">❌ ВІДКРИТИЙ КАНАЛ (Plaintext / HTTP):</text>
@@ -648,6 +667,27 @@
             <rect x="706" y="148" width="150" height="42" fill="#FFFFFF" stroke="#188038"/>
             <text x="781" y="174" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">🏢 + 🔑 Ключ K</text>
           </svg>
+          <svg viewBox="0 0 380 340" class="slide-svg slide-svg-portrait" aria-label="Схема перехоплення трафіку (вертикальна)">
+    <rect x="8" y="8" width="364" height="154" fill="#FCE8E6" stroke="#D93025"/>
+    <text x="20" y="28" fill="#D93025" font-size="12" font-weight="bold">❌ ВІДКРИТИЙ КАНАЛ (Plaintext / HTTP):</text>
+    <rect x="20" y="38" width="340" height="32" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="190" y="59" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">📱 Відправник ──► "Код: 4512"</text>
+    <rect x="20" y="78" width="340" height="38" fill="#FFFFFF" stroke="#D93025" stroke-width="2"/>
+    <text x="190" y="96" fill="#D93025" font-size="12" font-weight="bold" text-anchor="middle">🕵️ Wi-Fi Роутер: читає весь текст!</text>
+    <text x="190" y="111" fill="#64748B" font-size="10.5" text-anchor="middle">Перехоплює паролі та повідомлення</text>
+    <rect x="20" y="124" width="340" height="30" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="190" y="144" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">▼ 🏢 Сервер</text>
+
+    <rect x="8" y="174" width="364" height="158" fill="#E6F4EA" stroke="#188038"/>
+    <text x="20" y="194" fill="#188038" font-size="12" font-weight="bold">✅ СИМЕТРИЧНЕ ШИФРУВАННЯ (AES-256):</text>
+    <rect x="20" y="204" width="340" height="32" fill="#FFFFFF" stroke="#188038"/>
+    <text x="190" y="225" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">📱 + 🔑 Ключ K ──► 9f8a#d71!kLp</text>
+    <rect x="20" y="244" width="340" height="38" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="190" y="262" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">🕵️ Wi-Fi Роутер: бачить лише шум</text>
+    <text x="190" y="277" fill="#188038" font-size="10.5" font-weight="bold" text-anchor="middle">Без ключа K розшифрувати неможливо</text>
+    <rect x="20" y="290" width="340" height="32" fill="#FFFFFF" stroke="#188038"/>
+    <text x="190" y="311" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">▼ 🏢 Сервер + 🔑 Ключ K</text>
+  </svg>
         </div>
       </div>
     </section>
@@ -664,7 +704,7 @@
         <div id="caesarPanel" class="demo-panel">
           <!-- Графічне пояснення Шифру Цезаря -->
           <div class="slide-svg-wrap">
-            <svg viewBox="0 0 880 86" class="slide-svg" aria-label="Схема зсуву Шифру Цезаря">
+          <svg viewBox="0 0 880 86" class="slide-svg slide-svg-landscape" aria-label="Схема зсуву Шифру Цезаря">
               <rect x="10" y="10" width="210" height="66" fill="#F1F5F9" stroke="#CBD5E1"/>
               <text x="115" y="36" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">1. ВІДКРИТА ЛІТЕРА (x)</text>
               <text x="115" y="58" fill="#1A73E8" font-size="13" font-family="monospace" font-weight="bold" text-anchor="middle">А, Б, В ...</text>
@@ -679,7 +719,20 @@
               <text x="760" y="36" fill="#188038" font-size="12" font-weight="bold" text-anchor="middle">3. ШИФРОТЕКСТ</text>
               <text x="760" y="58" fill="#1E293B" font-size="13" font-family="monospace" font-weight="bold" text-anchor="middle">Г, Ґ, Д ...</text>
             </svg>
-          </div>
+          <svg viewBox="0 0 380 236" class="slide-svg slide-svg-portrait" aria-label="Схема зсуву Шифру Цезаря (вертикальна)">
+    <rect x="10" y="8" width="360" height="60" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="190" y="32" fill="#1E293B" font-size="12.5" font-weight="bold" text-anchor="middle">1. ВІДКРИТА ЛІТЕРА (x)</text>
+    <text x="190" y="54" fill="#1A73E8" font-size="13" font-family="monospace" font-weight="bold" text-anchor="middle">А, Б, В ...</text>
+    <text x="190" y="84" fill="#1A73E8" font-size="13" font-weight="bold" text-anchor="middle">▼</text>
+    <rect x="10" y="92" width="360" height="62" fill="#E8F0FE" stroke="#1A73E8"/>
+    <text x="190" y="116" fill="#174EA6" font-size="12.5" font-weight="bold" text-anchor="middle">2. ФОРМУЛА ЗСУВУ: (x + K) mod 33</text>
+    <text x="190" y="138" fill="#D93025" font-size="11.5" font-weight="bold" text-anchor="middle">⚠️ Лише 32 варіанти ключа K — перебір миттєвий</text>
+    <text x="190" y="168" fill="#188038" font-size="13" font-weight="bold" text-anchor="middle">▼</text>
+    <rect x="10" y="174" width="360" height="54" fill="#E6F4EA" stroke="#188038"/>
+    <text x="190" y="197" fill="#188038" font-size="12.5" font-weight="bold" text-anchor="middle">3. ШИФРОТЕКСТ</text>
+    <text x="190" y="217" fill="#1E293B" font-size="13" font-family="monospace" font-weight="bold" text-anchor="middle">Г, Ґ, Д ...</text>
+  </svg>
+        </div>
 
           <div class="demo-grid-2">
             <div class="card">
@@ -724,7 +777,7 @@
         <div id="aesPanel" class="demo-panel">
           <!-- Графічне пояснення AES-256-GCM -->
           <div class="slide-svg-wrap">
-            <svg viewBox="0 0 880 92" class="slide-svg" aria-label="Схема шифрування AES-256-GCM">
+          <svg viewBox="0 0 880 92" class="slide-svg slide-svg-landscape" aria-label="Схема шифрування AES-256-GCM">
               <rect x="10" y="8" width="255" height="76" fill="#F1F5F9" stroke="#CBD5E1"/>
               <text x="137" y="30" fill="#1E293B" font-size="11" font-weight="bold" text-anchor="middle">1. AES-256 (Блокове ядро)</text>
               <text x="137" y="50" fill="#1A73E8" font-size="10.5" font-family="monospace" text-anchor="middle">14 раундів • Ключ 256 біт (2^256)</text>
@@ -742,7 +795,23 @@
               <text x="740" y="50" fill="#1E293B" font-size="10.5" text-anchor="middle">Контрольна сума цілісності пакета</text>
               <text x="740" y="69" fill="#D93025" font-size="9.5" font-weight="bold" text-anchor="middle">Зміна 1 біта в мережі зриває пломбу!</text>
             </svg>
-          </div>
+          <svg viewBox="0 0 380 268" class="slide-svg slide-svg-portrait" aria-label="Схема шифрування AES-256-GCM (вертикальна)">
+    <rect x="10" y="8" width="360" height="72" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="190" y="29" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">1. AES-256 (Блокове ядро)</text>
+    <text x="190" y="48" fill="#1A73E8" font-size="11.5" font-family="monospace" text-anchor="middle">14 раундів • Ключ 256 біт (2^256)</text>
+    <text x="190" y="66" fill="#64748B" font-size="10.5" text-anchor="middle">Сам по собі не перевіряє підміну байтів</text>
+    <text x="190" y="93" fill="#1A73E8" font-size="12" font-weight="bold" text-anchor="middle">▼</text>
+    <rect x="10" y="98" width="360" height="72" fill="#E8F0FE" stroke="#1A73E8"/>
+    <text x="190" y="119" fill="#174EA6" font-size="12" font-weight="bold" text-anchor="middle">2. CM — Counter Mode (Лічильник + IV)</text>
+    <text x="190" y="138" fill="#1E293B" font-size="11" text-anchor="middle">Шифрує потоком будь-яку довжину тексту</text>
+    <text x="190" y="156" fill="#1A73E8" font-size="10.5" font-weight="bold" text-anchor="middle">Унікальний IV робить кожен пакет неповторним</text>
+    <text x="190" y="183" fill="#188038" font-size="12" font-weight="bold" text-anchor="middle">▼</text>
+    <rect x="10" y="188" width="360" height="72" fill="#E6F4EA" stroke="#188038" stroke-width="2"/>
+    <text x="190" y="209" fill="#188038" font-size="12" font-weight="bold" text-anchor="middle">3. G — Galois Tag (Пломба 16 байт)</text>
+    <text x="190" y="228" fill="#1E293B" font-size="11" text-anchor="middle">Контрольна сума цілісності пакета</text>
+    <text x="190" y="246" fill="#D93025" font-size="10.5" font-weight="bold" text-anchor="middle">Зміна 1 біта в мережі зриває пломбу!</text>
+  </svg>
+        </div>
 
           <div class="demo-grid-2">
             <div class="card">
@@ -804,7 +873,7 @@
 
         <!-- Схема: Як працює Публічний замок та Приватний ключ -->
         <div class="slide-svg-wrap">
-          <svg viewBox="0 0 880 185" class="slide-svg" aria-label="Схема асиметричного шифрування">
+          <svg viewBox="0 0 880 185" class="slide-svg slide-svg-landscape" aria-label="Схема асиметричного шифрування">
             <!-- Боб (Відправник) -->
             <rect x="14" y="20" width="230" height="145" fill="#F1F5F9" stroke="#CBD5E1"/>
             <rect x="14" y="20" width="230" height="6" fill="#1A73E8"/>
@@ -829,6 +898,24 @@
             <text x="751" y="102" fill="#64748B" font-size="11" text-anchor="middle">(ніколи не покидає її телефон)</text>
             <text x="751" y="132" fill="#188038" font-size="11" font-weight="bold" text-anchor="middle">✅ Єдина, хто відкриває сейф</text>
           </svg>
+          <svg viewBox="0 0 380 288" class="slide-svg slide-svg-portrait" aria-label="Схема асиметричного шифрування (вертикальна)">
+    <rect x="10" y="8" width="360" height="78" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <rect x="10" y="8" width="360" height="5" fill="#1A73E8"/>
+    <text x="190" y="32" fill="#1E293B" font-size="12.5" font-weight="bold" text-anchor="middle">1. ВІДПРАВНИК (БОБ)</text>
+    <text x="190" y="52" fill="#1A73E8" font-size="12" font-weight="bold" text-anchor="middle">🔓 Бере Публічний ключ Аліси (відомий усім)</text>
+    <text x="190" y="72" fill="#1E293B" font-size="11" text-anchor="middle">Клацає відкритим замком сейф</text>
+    <text x="190" y="100" fill="#1A73E8" font-size="12" font-weight="bold" text-anchor="middle">▼</text>
+    <rect x="10" y="106" width="360" height="78" fill="#FFFFFF" stroke="#1A73E8" stroke-width="2"/>
+    <text x="190" y="128" fill="#1E293B" font-size="12.5" font-weight="bold" text-anchor="middle">📦 Замкнений сейф у мережі</text>
+    <text x="190" y="148" fill="#D93025" font-size="11" text-anchor="middle">🕵️ Хакер бачить Публічний ключ, але ним НЕ відкрити!</text>
+    <text x="190" y="168" fill="#188038" font-size="11" font-weight="bold" text-anchor="middle">Тільки в один бік ▼</text>
+    <text x="190" y="196" fill="#188038" font-size="12" font-weight="bold" text-anchor="middle">▼</text>
+    <rect x="10" y="202" width="360" height="78" fill="#E6F4EA" stroke="#188038"/>
+    <rect x="10" y="202" width="360" height="5" fill="#188038"/>
+    <text x="190" y="226" fill="#1E293B" font-size="12.5" font-weight="bold" text-anchor="middle">2. ОТРИМУВАЧ (АЛІСА)</text>
+    <text x="190" y="246" fill="#188038" font-size="12" font-weight="bold" text-anchor="middle">🗝️ Має Приватний ключ (живе в її телефоні)</text>
+    <text x="190" y="266" fill="#188038" font-size="11" font-weight="bold" text-anchor="middle">✅ Єдина, хто відкриває сейф</text>
+  </svg>
         </div>
       </div>
     </section>
@@ -845,7 +932,7 @@
         <div id="dhPanel" class="demo-panel">
           <!-- Графічне пояснення обміну ключами Діффі-Геллмана: Степінь -> Залишок mod 23 -> KDF SHA-256 -> Ключ K -->
           <div class="slide-svg-wrap">
-            <svg viewBox="0 0 880 96" class="slide-svg" aria-label="Схема формули Діффі-Геллмана">
+          <svg viewBox="0 0 880 96" class="slide-svg slide-svg-landscape" aria-label="Схема формули Діффі-Геллмана">
               <rect x="10" y="8" width="270" height="80" fill="#F1F5F9" stroke="#CBD5E1"/>
               <text x="145" y="30" fill="#1E293B" font-size="11" font-weight="bold" text-anchor="middle">1. СТЕПІНЬ + ЗАЛИШОК (mod 23)</text>
               <text x="145" y="51" fill="#1A73E8" font-size="11" font-family="monospace" font-weight="bold" text-anchor="middle">S = B^a mod 23 = A^b mod 23</text>
@@ -861,7 +948,23 @@
               <text x="735" y="51" fill="#1E293B" font-size="10.5" text-anchor="middle">Пасивно проглядає трафік (бачить лише A і B),</text>
               <text x="735" y="71" fill="#D93025" font-size="10" font-weight="bold" text-anchor="middle">не втручається, але без a і b не знайде ні S, ні K!</text>
             </svg>
-          </div>
+          <svg viewBox="0 0 380 256" class="slide-svg slide-svg-portrait" aria-label="Схема формули Діффі-Геллмана (вертикальна)">
+    <rect x="10" y="8" width="360" height="74" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="190" y="29" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">1. СТЕПІНЬ + ЗАЛИШОК (mod 23)</text>
+    <text x="190" y="49" fill="#1A73E8" font-size="12" font-family="monospace" font-weight="bold" text-anchor="middle">S = B^a mod 23 = A^b mod 23</text>
+    <text x="190" y="68" fill="#64748B" font-size="10.5" text-anchor="middle">Степінь дає велике число, а mod 23 бере залишок S</text>
+
+    <rect x="10" y="91" width="360" height="74" fill="#E6F4EA" stroke="#188038" stroke-width="2"/>
+    <text x="190" y="112" fill="#188038" font-size="12" font-weight="bold" text-anchor="middle">2. ЯК З ЧИСЛА S ОТРИМУЮТЬ КЛЮЧ K?</text>
+    <text x="190" y="132" fill="#1E293B" font-size="12" font-family="monospace" font-weight="bold" text-anchor="middle">K = SHA-256(S) ──► 256 біт для AES</text>
+    <text x="190" y="151" fill="#188038" font-size="10.5" font-weight="bold" text-anchor="middle">Спільний залишок S перетворюється у ключ K</text>
+
+    <rect x="10" y="174" width="360" height="74" fill="#FCE8E6" stroke="#D93025"/>
+    <text x="190" y="195" fill="#D93025" font-size="12" font-weight="bold" text-anchor="middle">3. ПАСИВНИЙ ХАКЕР У МЕРЕЖІ</text>
+    <text x="190" y="215" fill="#1E293B" font-size="11" text-anchor="middle">Бачить лише відкриті A і B (не втручається),</text>
+    <text x="190" y="234" fill="#D93025" font-size="10.5" font-weight="bold" text-anchor="middle">але без секретів a і b не знайде ні S, ні K!</text>
+  </svg>
+        </div>
 
           <div class="dh-stage">
             <div class="dh-column">
@@ -964,7 +1067,7 @@
         <div id="chatPanel" class="demo-panel">
           <!-- Графічне порівняння Хмарного чату та E2EE -->
           <div class="slide-svg-wrap">
-            <svg viewBox="0 0 880 86" class="slide-svg" aria-label="Схема Хмарного чату проти E2EE">
+          <svg viewBox="0 0 880 86" class="slide-svg slide-svg-landscape" aria-label="Схема Хмарного чату проти E2EE">
               <rect x="10" y="10" width="420" height="66" fill="#FCE8E6" stroke="#D93025"/>
               <text x="220" y="34" fill="#D93025" font-size="11" font-weight="bold" text-anchor="middle">☁️ ХМАРНИЙ ЧАТ (Клієнт ──► Сервер із ключем ──► Клієнт)</text>
               <text x="220" y="56" fill="#1E293B" font-size="11" text-anchor="middle">Сервер розшифровує текст для синхронізації</text>
@@ -973,7 +1076,16 @@
               <text x="660" y="34" fill="#188038" font-size="11" font-weight="bold" text-anchor="middle">🔒 НАСКРІЗНЕ E2EE (Клієнт ══════► Клієнт)</text>
               <text x="660" y="56" fill="#1E293B" font-size="11" text-anchor="middle">Ключі тільки на телефонах • Сервер бачить лише шум</text>
             </svg>
-          </div>
+          <svg viewBox="0 0 380 164" class="slide-svg slide-svg-portrait" aria-label="Схема Хмарного чату проти E2EE (вертикальна)">
+    <rect x="10" y="8" width="360" height="68" fill="#FCE8E6" stroke="#D93025"/>
+    <text x="190" y="33" fill="#D93025" font-size="11.5" font-weight="bold" text-anchor="middle">☁️ ХМАРНИЙ ЧАТ (Клієнт ──► Сервер ──► Клієнт)</text>
+    <text x="190" y="56" fill="#1E293B" font-size="11" text-anchor="middle">Сервер розшифровує текст для синхронізації</text>
+
+    <rect x="10" y="88" width="360" height="68" fill="#E6F4EA" stroke="#188038"/>
+    <text x="190" y="113" fill="#188038" font-size="11.5" font-weight="bold" text-anchor="middle">🔒 НАСКРІЗНЕ E2EE (Клієнт ══════► Клієнт)</text>
+    <text x="190" y="136" fill="#1E293B" font-size="11" text-anchor="middle">Ключі тільки на телефонах • Сервер бачить лише шум</text>
+  </svg>
+        </div>
 
           <div class="chat-mode-selector">
             <button class="chat-arch-btn active" id="archCloudBtn" onclick="setChatArchitecture('cloud')">☁️ Хмарний чат (Telegram / Discord)</button>
@@ -1016,7 +1128,7 @@
 
         <!-- Схема: Як сервер перевіряє пароль через Хеш + Сіль -->
         <div class="slide-svg-wrap">
-          <svg viewBox="0 0 880 190" class="slide-svg" aria-label="Схема хешування паролів">
+          <svg viewBox="0 0 880 190" class="slide-svg slide-svg-landscape" aria-label="Схема хешування паролів">
             <!-- Вхід -->
             <rect x="14" y="22" width="195" height="64" fill="#F1F5F9" stroke="#CBD5E1"/>
             <text x="111" y="48" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">1. Введення пароля</text>
@@ -1047,6 +1159,30 @@
             <text x="690" y="117" fill="#1E293B" font-size="11" font-family="monospace" text-anchor="middle">hash: e3b0c44298fc1c149afbf4c8996fb924...</text>
             <text x="690" y="150" fill="#188038" font-size="11" font-weight="bold" text-anchor="middle">✅ Якщо SHA-256(Пароль + Сіль) == hash — вхід дозволено</text>
           </svg>
+          <svg viewBox="0 0 380 318" class="slide-svg slide-svg-portrait" aria-label="Схема хешування паролів (вертикальна)">
+    <rect x="10" y="8" width="174" height="64" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="97" y="31" fill="#1E293B" font-size="11.5" font-weight="bold" text-anchor="middle">1. Введення пароля</text>
+    <text x="97" y="53" fill="#1A73E8" font-size="12" font-family="monospace" font-weight="bold" text-anchor="middle">"MySecret2026"</text>
+
+    <rect x="196" y="8" width="174" height="64" fill="#FEF7E0" stroke="#B06000"/>
+    <text x="283" y="29" fill="#B06000" font-size="11" font-weight="bold" text-anchor="middle">+ Сіль (Salt з БД)</text>
+    <text x="283" y="48" fill="#1E293B" font-size="11" font-family="monospace" font-weight="bold" text-anchor="middle">"#9xK2pL"</text>
+    <text x="283" y="64" fill="#64748B" font-size="9.5" text-anchor="middle">Plain Text (не секрет)</text>
+
+    <text x="190" y="90" fill="#1A73E8" font-size="12" font-weight="bold" text-anchor="middle">▼</text>
+    <rect x="10" y="96" width="360" height="66" fill="#E8F0FE" stroke="#1A73E8" stroke-width="2"/>
+    <text x="190" y="120" fill="#174EA6" font-size="12.5" font-weight="bold" text-anchor="middle">⚙️ SHA-256 / Argon2 (Хешує: Пароль + Сіль)</text>
+    <text x="190" y="144" fill="#D93025" font-size="11" font-weight="bold" text-anchor="middle">◄── Одностороння функція: назад неможливо!</text>
+
+    <text x="190" y="178" fill="#188038" font-size="12" font-weight="bold" text-anchor="middle">▼</text>
+    <rect x="10" y="184" width="360" height="126" fill="#E6F4EA" stroke="#188038"/>
+    <text x="190" y="206" fill="#188038" font-size="11.5" font-weight="bold" text-anchor="middle">🗄️ БАЗА ДАНИХ СЕРВЕРА (Сіль у Plain Text + Хеш):</text>
+    <rect x="24" y="216" width="332" height="28" fill="#FEF7E0" stroke="#B06000"/>
+    <text x="190" y="235" fill="#B06000" font-size="11" font-family="monospace" font-weight="bold" text-anchor="middle">salt (відкритий текст): "#9xK2pL"</text>
+    <rect x="24" y="250" width="332" height="28" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="190" y="269" fill="#1E293B" font-size="11" font-family="monospace" text-anchor="middle">hash: e3b0c44298fc1c149afbf4c8996fb924...</text>
+    <text x="190" y="298" fill="#188038" font-size="11" font-weight="bold" text-anchor="middle">✅ Якщо SHA-256(Пароль + Сіль) == hash — вхід дозволено</text>
+  </svg>
         </div>
 
         <div class="demo-grid-2">
@@ -1085,7 +1221,7 @@
 
         <!-- Графічне пояснення Лавинного ефекту та Формули Ентропії -->
         <div class="slide-svg-wrap">
-          <svg viewBox="0 0 880 86" class="slide-svg" aria-label="Схема Лавинного ефекту та Ентропії пароля">
+          <svg viewBox="0 0 880 86" class="slide-svg slide-svg-landscape" aria-label="Схема Лавинного ефекту та Ентропії пароля">
             <rect x="10" y="10" width="420" height="66" fill="#E8F0FE" stroke="#1A73E8"/>
             <text x="220" y="34" fill="#174EA6" font-size="11" font-weight="bold" text-anchor="middle">🌪️ ЛАВИННИЙ ЕФЕКТ SHA-256</text>
             <text x="220" y="56" fill="#1E293B" font-size="11" font-family="monospace" text-anchor="middle">Зміна 1 символу входу ──► Змінює ~50% (128 біт) хешу</text>
@@ -1094,6 +1230,15 @@
             <text x="660" y="34" fill="#188038" font-size="11" font-weight="bold" text-anchor="middle">📐 ФОРМУЛА ЕНТРОПІЇ: E = Довжина (L) × log2(Алфавіт N)</text>
             <text x="660" y="56" fill="#1E293B" font-size="11" text-anchor="middle">Довжина (4 слова Passphrase) важливіша за спецсимволи!</text>
           </svg>
+          <svg viewBox="0 0 380 164" class="slide-svg slide-svg-portrait" aria-label="Схема Лавинного ефекту та Ентропії (вертикальна)">
+    <rect x="10" y="8" width="360" height="68" fill="#E8F0FE" stroke="#1A73E8"/>
+    <text x="190" y="33" fill="#174EA6" font-size="12" font-weight="bold" text-anchor="middle">🌪️ ЛАВИННИЙ ЕФЕКТ SHA-256</text>
+    <text x="190" y="56" fill="#1E293B" font-size="11" font-family="monospace" text-anchor="middle">Зміна 1 символу ──► Змінює ~50% (128 біт) хешу</text>
+
+    <rect x="10" y="88" width="360" height="68" fill="#E6F4EA" stroke="#188038"/>
+    <text x="190" y="113" fill="#188038" font-size="12" font-weight="bold" text-anchor="middle">📐 ЕНТРОПІЯ: E = Довжина (L) × log2(N)</text>
+    <text x="190" y="136" fill="#1E293B" font-size="11" text-anchor="middle">Довжина (4 слова Passphrase) важливіша за спецсимволи!</text>
+  </svg>
         </div>
 
         <div class="demo-grid-2">
@@ -1171,7 +1316,7 @@
         </div>
         <div id="certSignPanel" class="demo-panel">
           <div class="slide-svg-wrap">
-            <svg viewBox="0 0 880 86" class="slide-svg" aria-label="Схема електронного підпису КЕП">
+          <svg viewBox="0 0 880 86" class="slide-svg slide-svg-landscape" aria-label="Схема електронного підпису КЕП">
               <rect x="10" y="10" width="195" height="66" fill="#F1F5F9" stroke="#CBD5E1"/>
               <text x="107" y="35" fill="#1E293B" font-size="11" font-weight="bold" text-anchor="middle">1. ДОКУМЕНТ + SHA-256</text>
               <text x="107" y="55" fill="#64748B" font-size="10" text-anchor="middle">Унікальний хеш тексту</text>
@@ -1186,7 +1331,20 @@
               <text x="725" y="35" fill="#188038" font-size="11" font-weight="bold" text-anchor="middle">3. ПЕРЕВІРКА ОСОБИСТИМ СЕРТИФІКАТОМ</text>
               <text x="725" y="55" fill="#1E293B" font-size="10" text-anchor="middle">Зміна навіть 1 цифри в документі ламає підпис!</text>
             </svg>
-          </div>
+          <svg viewBox="0 0 380 236" class="slide-svg slide-svg-portrait" aria-label="Схема електронного підпису КЕП (вертикальна)">
+    <rect x="10" y="8" width="360" height="60" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="190" y="32" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">1. ДОКУМЕНТ + SHA-256</text>
+    <text x="190" y="52" fill="#64748B" font-size="11" text-anchor="middle">Унікальний хеш тексту документа</text>
+    <text x="190" y="83" fill="#1A73E8" font-size="12" font-weight="bold" text-anchor="middle">▼</text>
+    <rect x="10" y="90" width="360" height="60" fill="#E8F0FE" stroke="#1A73E8"/>
+    <text x="190" y="114" fill="#174EA6" font-size="12" font-weight="bold" text-anchor="middle">2. ПІДПИС ПРИВАТНИМ КЛЮЧЕМ (ECDSA)</text>
+    <text x="190" y="134" fill="#1A73E8" font-size="11" text-anchor="middle">Працює тільки з твоїм особистим ключем (Дія / КЕП)</text>
+    <text x="190" y="165" fill="#188038" font-size="12" font-weight="bold" text-anchor="middle">▼</text>
+    <rect x="10" y="172" width="360" height="56" fill="#E6F4EA" stroke="#188038"/>
+    <text x="190" y="195" fill="#188038" font-size="12" font-weight="bold" text-anchor="middle">3. ПЕРЕВІРКА ОСОБИСТИМ СЕРТИФІКАТОМ</text>
+    <text x="190" y="215" fill="#1E293B" font-size="11" text-anchor="middle">Зміна навіть 1 цифри в документі ламає підпис!</text>
+  </svg>
+        </div>
 
           <div class="demo-grid-2">
             <div class="card">
@@ -1249,7 +1407,7 @@
         </div>
         <div id="certHttpsPanel" class="demo-panel">
           <div class="slide-svg-wrap">
-            <svg viewBox="0 0 880 86" class="slide-svg" aria-label="Схема ланцюжка довіри HTTPS">
+          <svg viewBox="0 0 880 86" class="slide-svg slide-svg-landscape" aria-label="Схема ланцюжка довіри HTTPS">
               <rect x="10" y="10" width="250" height="66" fill="#E8F0FE" stroke="#1A73E8"/>
               <text x="135" y="35" fill="#174EA6" font-size="11" font-weight="bold" text-anchor="middle">🏛️ КОРЕНЕВИЙ ЦЕНТР (Root CA)</text>
               <text x="135" y="55" fill="#1E293B" font-size="10" text-anchor="middle">DigiCert / Let's Encrypt (вшитий у ОС)</text>
@@ -1264,7 +1422,20 @@
               <text x="745" y="35" fill="#188038" font-size="11" font-weight="bold" text-anchor="middle">🌐 БРАУЗЕР ПЕРЕВІРЯЄ ПІДПИС</text>
               <text x="745" y="55" fill="#1E293B" font-size="10" text-anchor="middle">Захищає від підміни ключа у Wi-Fi</text>
             </svg>
-          </div>
+          <svg viewBox="0 0 380 236" class="slide-svg slide-svg-portrait" aria-label="Схема ланцюжка довіри HTTPS (вертикальна)">
+    <rect x="10" y="8" width="360" height="60" fill="#E8F0FE" stroke="#1A73E8"/>
+    <text x="190" y="32" fill="#174EA6" font-size="12" font-weight="bold" text-anchor="middle">🏛️ 1. КОРЕНЕВИЙ ЦЕНТР (Root CA)</text>
+    <text x="190" y="52" fill="#1E293B" font-size="11" text-anchor="middle">DigiCert / Let&#39;s Encrypt (вшитий у ОС)</text>
+    <text x="190" y="83" fill="#1A73E8" font-size="12" font-weight="bold" text-anchor="middle">▼</text>
+    <rect x="10" y="90" width="360" height="60" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="190" y="114" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">📜 2. СЕРТИФІКАТ САЙТУ (X.509)</text>
+    <text x="190" y="134" fill="#1A73E8" font-size="11" text-anchor="middle">Домен (CN) + Публічний ключ + Підпис CA</text>
+    <text x="190" y="165" fill="#188038" font-size="12" font-weight="bold" text-anchor="middle">▼</text>
+    <rect x="10" y="172" width="360" height="56" fill="#E6F4EA" stroke="#188038"/>
+    <text x="190" y="195" fill="#188038" font-size="12" font-weight="bold" text-anchor="middle">🌐 3. БРАУЗЕР ПЕРЕВІРЯЄ ПІДПИС</text>
+    <text x="190" y="215" fill="#1E293B" font-size="11" text-anchor="middle">Захищає від підміни ключа у Wi-Fi</text>
+  </svg>
+        </div>
 
           <div class="chat-mode-selector">
             <button class="chat-arch-btn active" id="certBtnBank" onclick="inspectHttpsCert('bank')">✅ monobank.ua (Справжній банк)</button>
@@ -1296,7 +1467,7 @@
 
         <!-- Схема: MITM Reverse Proxy Phishing -->
         <div class="slide-svg-wrap">
-          <svg viewBox="0 0 880 155" class="slide-svg" aria-label="Схема фішингової атаки посередника">
+          <svg viewBox="0 0 880 155" class="slide-svg slide-svg-landscape" aria-label="Схема фішингової атаки посередника">
             <rect x="14" y="24" width="195" height="105" fill="#F1F5F9" stroke="#CBD5E1"/>
             <text x="111" y="55" fill="#1E293B" font-size="13" font-weight="bold" text-anchor="middle">👤 Користувач</text>
             <text x="111" y="80" fill="#64748B" font-size="11" text-anchor="middle">Бачить 🔒 HTTPS замочок</text>
@@ -1319,6 +1490,22 @@
             <text x="768" y="80" fill="#64748B" font-size="11" text-anchor="middle">Приймає справжній код</text>
             <text x="768" y="102" fill="#D93025" font-size="11" font-weight="bold" text-anchor="middle">Відкриває доступ хакеру</text>
           </svg>
+          <svg viewBox="0 0 380 284" class="slide-svg slide-svg-portrait" aria-label="Схема фішингової атаки посередника (вертикальна)">
+    <rect x="10" y="8" width="360" height="72" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="190" y="30" fill="#1E293B" font-size="12.5" font-weight="bold" text-anchor="middle">👤 1. Користувач</text>
+    <text x="190" y="50" fill="#64748B" font-size="11" text-anchor="middle">Бачить 🔒 HTTPS замочок</text>
+    <text x="190" y="68" fill="#D93025" font-size="11" font-weight="bold" text-anchor="middle">Вводить логін + 5 цифр коду</text>
+    <text x="190" y="95" fill="#D93025" font-size="11" font-weight="bold" text-anchor="middle">▼ Зашифровано!</text>
+    <rect x="10" y="102" width="360" height="80" fill="#FCE8E6" stroke="#D93025" stroke-width="2"/>
+    <text x="190" y="124" fill="#D93025" font-size="12.5" font-weight="bold" text-anchor="middle">🎭 2. Фейковий сайт-проксі</text>
+    <text x="190" y="144" fill="#1E293B" font-size="12" font-family="monospace" font-weight="bold" text-anchor="middle">https://instagrarn.com (m → rn)</text>
+    <text x="190" y="166" fill="#D93025" font-size="11" text-anchor="middle">За 0.1 сек пересилає код боту</text>
+    <text x="190" y="197" fill="#D93025" font-size="11" font-weight="bold" text-anchor="middle">▼ Крадіжка сесії</text>
+    <rect x="10" y="204" width="360" height="72" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="190" y="226" fill="#1E293B" font-size="12.5" font-weight="bold" text-anchor="middle">🏢 3. Справжній Сервер</text>
+    <text x="190" y="246" fill="#64748B" font-size="11" text-anchor="middle">Приймає справжній код</text>
+    <text x="190" y="264" fill="#D93025" font-size="11" font-weight="bold" text-anchor="middle">Відкриває доступ хакеру</text>
+  </svg>
         </div>
       </div>
     </section>
@@ -1339,7 +1526,7 @@
         <div class="quiz-container">
           <!-- Графічна анатомія URL-адреси для перевірки домену -->
           <div class="slide-svg-wrap">
-            <svg viewBox="0 0 880 82" class="slide-svg" aria-label="Схема анатомії URL та перевірки домену">
+          <svg viewBox="0 0 880 82" class="slide-svg slide-svg-landscape" aria-label="Схема анатомії URL та перевірки домену">
               <rect x="10" y="10" width="215" height="62" fill="#FEF7E0" stroke="#B06000"/>
               <text x="117" y="34" fill="#B06000" font-size="11" font-weight="bold" text-anchor="middle">🔒 https:// (Протокол)</text>
               <text x="117" y="54" fill="#64748B" font-size="10" text-anchor="middle">Є навіть у шахраїв!</text>
@@ -1356,7 +1543,24 @@
               <text x="787" y="34" fill="#1E293B" font-size="11" font-weight="bold" text-anchor="middle">/jar/7Xk... (Шлях)</text>
               <text x="787" y="54" fill="#64748B" font-size="10" text-anchor="middle">Сторінка на сайті</text>
             </svg>
-          </div>
+          <svg viewBox="0 0 380 256" class="slide-svg slide-svg-portrait" aria-label="Схема анатомії URL (вертикальна)">
+    <rect x="10" y="8" width="360" height="54" fill="#FEF7E0" stroke="#B06000"/>
+    <text x="190" y="30" fill="#B06000" font-size="12" font-weight="bold" text-anchor="middle">🔒 https:// (Протокол)</text>
+    <text x="190" y="49" fill="#64748B" font-size="11" text-anchor="middle">Є навіть у шахраїв!</text>
+
+    <rect x="10" y="70" width="360" height="54" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="190" y="92" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">send. (Піддомен)</text>
+    <text x="190" y="111" fill="#64748B" font-size="11" text-anchor="middle">Може бути будь-яким</text>
+
+    <rect x="10" y="132" width="360" height="56" fill="#E6F4EA" stroke="#188038" stroke-width="2"/>
+    <text x="190" y="154" fill="#188038" font-size="12.5" font-weight="bold" text-anchor="middle">🎯 monobank.ua (ГОЛОВНИЙ ДОМЕН)</text>
+    <text x="190" y="175" fill="#1E293B" font-size="11" font-weight="bold" text-anchor="middle">Перевіряй літеру-в-літеру перед першим «/»</text>
+
+    <rect x="10" y="196" width="360" height="52" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="190" y="218" fill="#1E293B" font-size="12" font-weight="bold" text-anchor="middle">/jar/7Xk... (Шлях)</text>
+    <text x="190" y="237" fill="#64748B" font-size="11" text-anchor="middle">Сторінка на сайті</text>
+  </svg>
+        </div>
 
           <div class="browser-mockup">
             <div class="browser-toolbar">
@@ -1395,7 +1599,7 @@
 
         <!-- Схема: Механіка Passkey Challenge-Response -->
         <div class="slide-svg-wrap">
-          <svg viewBox="0 0 880 150" class="slide-svg" aria-label="Схема автентифікації Passkeys">
+          <svg viewBox="0 0 880 150" class="slide-svg slide-svg-landscape" aria-label="Схема автентифікації Passkeys">
             <rect x="14" y="18" width="245" height="114" fill="#E6F4EA" stroke="#188038"/>
             <text x="136" y="45" fill="#188038" font-size="13" font-weight="bold" text-anchor="middle">📱 Захищений чіп (FaceID)</text>
             <text x="136" y="72" fill="#1E293B" font-size="11" text-anchor="middle">Зберігає 🗝️ Приватний ключ</text>
@@ -1414,6 +1618,21 @@
             <text x="740" y="95" fill="#64748B" font-size="11" text-anchor="middle">Перевіряє математичний підпис</text>
             <text x="740" y="116" fill="#188038" font-size="11" font-weight="bold" text-anchor="middle">✅ Стійкий до фішингу та зливів БД</text>
           </svg>
+          <svg viewBox="0 0 380 268" class="slide-svg slide-svg-portrait" aria-label="Схема автентифікації Passkeys (вертикальна)">
+    <rect x="10" y="8" width="360" height="86" fill="#E6F4EA" stroke="#188038"/>
+    <text x="190" y="30" fill="#188038" font-size="12.5" font-weight="bold" text-anchor="middle">📱 Захищений чіп телефона (FaceID)</text>
+    <text x="190" y="50" fill="#1E293B" font-size="11.5" text-anchor="middle">Зберігає 🗝️ Приватний ключ • Перевіряє точний домен</text>
+    <text x="190" y="72" fill="#188038" font-size="11" font-weight="bold" text-anchor="middle">Ніколи не передає ключ у мережу</text>
+
+    <rect x="10" y="102" width="360" height="64" fill="#E8F0FE" stroke="#1A73E8" stroke-dasharray="4,4"/>
+    <text x="190" y="126" fill="#1A73E8" font-size="11.5" font-weight="bold" text-anchor="middle">▲ 1. Сервер шле випадковий запит (Challenge)</text>
+    <text x="190" y="150" fill="#188038" font-size="11.5" font-weight="bold" text-anchor="middle">▼ 2. Чіп повертає Підпис (Challenge + Домен)</text>
+
+    <rect x="10" y="174" width="360" height="86" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text x="190" y="196" fill="#1E293B" font-size="12.5" font-weight="bold" text-anchor="middle">🏢 Сервер сайту</text>
+    <text x="190" y="216" fill="#1A73E8" font-size="11.5" text-anchor="middle">Має лише 🔓 Публічний ключ • Звіряє підпис і домен</text>
+    <text x="190" y="238" fill="#188038" font-size="11" font-weight="bold" text-anchor="middle">✅ Стійкий до фішингу та зливів БД</text>
+  </svg>
         </div>
 
                 <div class="tier-list">
@@ -1466,7 +1685,7 @@
 
         <!-- Графічна схема ешелонованого захисту (Defense in Depth) -->
         <div class="slide-svg-wrap">
-          <svg viewBox="0 0 880 90" class="slide-svg" aria-label="Схема рівнів цифрового захисту">
+          <svg viewBox="0 0 880 90" class="slide-svg slide-svg-landscape" aria-label="Схема рівнів цифрового захисту">
             <rect x="10" y="12" width="205" height="66" fill="#E8F0FE" stroke="#1A73E8"/>
             <text x="112" y="38" fill="#174EA6" font-size="11" font-weight="bold" text-anchor="middle">ШАР 1: ПАРОЛІ</text>
             <text x="112" y="58" fill="#1E293B" font-size="10" text-anchor="middle">Менеджер паролів + Passphrase</text>
@@ -1486,6 +1705,23 @@
             <text x="773" y="38" fill="#188038" font-size="11" font-weight="bold" text-anchor="middle">ШАР 4: УВАЖНІСТЬ</text>
             <text x="773" y="58" fill="#1E293B" font-size="10" text-anchor="middle">Перевірка домену та сесій</text>
           </svg>
+          <svg viewBox="0 0 380 256" class="slide-svg slide-svg-portrait" aria-label="Схема рівнів цифрового захисту (вертикальна)">
+    <rect x="10" y="8" width="360" height="54" fill="#E8F0FE" stroke="#1A73E8"/>
+    <text x="190" y="30" fill="#174EA6" font-size="12" font-weight="bold" text-anchor="middle">ШАР 1: ПАРОЛІ</text>
+    <text x="190" y="49" fill="#1E293B" font-size="11" text-anchor="middle">Менеджер паролів + Passphrase</text>
+
+    <rect x="10" y="70" width="360" height="54" fill="#E8F0FE" stroke="#1A73E8"/>
+    <text x="190" y="92" fill="#174EA6" font-size="12" font-weight="bold" text-anchor="middle">ШАР 2: ДРУГИЙ ФАКТОР</text>
+    <text x="190" y="111" fill="#1E293B" font-size="11" text-anchor="middle">Passkey / 2FA App / Cloud Pass</text>
+
+    <rect x="10" y="132" width="360" height="54" fill="#E8F0FE" stroke="#1A73E8"/>
+    <text x="190" y="154" fill="#174EA6" font-size="12" font-weight="bold" text-anchor="middle">ШАР 3: КАНАЛ ЗВ&#39;ЯЗКУ</text>
+    <text x="190" y="173" fill="#1E293B" font-size="11" text-anchor="middle">Наскрізне шифрування E2EE</text>
+
+    <rect x="10" y="194" width="360" height="54" fill="#E6F4EA" stroke="#188038" stroke-width="2"/>
+    <text x="190" y="216" fill="#188038" font-size="12" font-weight="bold" text-anchor="middle">ШАР 4: УВАЖНІСТЬ</text>
+    <text x="190" y="235" fill="#1E293B" font-size="11" text-anchor="middle">Перевірка домену та сесій</text>
+  </svg>
         </div>
 
         <div class="checklist-interactive">
@@ -1598,6 +1834,6 @@
     <button class="nav-btn nav-btn-primary" id="nextBtn" onclick="nextSlide()" aria-label="Наступний слайд"><span class="nav-btn-label">Далі </span><span class="nav-btn-arrow">→</span></button>
   </footer>
 
-  <script src="app.js?v=32"></script>
+  <script src="app.js?v=33"></script>
 </body>
 </html>

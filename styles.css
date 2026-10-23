@@ -1664,3 +1664,21 @@ code {
     align-self: flex-start;
   }
 }
+
+/* Горизонтальні vs Вертикальні (Portrait) SVG-схеми */
+.slide-svg-portrait {
+  display: none;
+}
+
+@media (orientation: portrait), (max-width: 720px) {
+  .slide-svg-landscape {
+    display: none !important;
+  }
+  .slide-svg-portrait {
+    display: block !important;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
