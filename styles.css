@@ -219,13 +219,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 1.75rem;
+  width: 100%;
 }
 
 .slide {
   display: none;
   width: 100%;
-  max-width: 1180px;
+  max-width: 1260px;
   animation: mdFade 0.2s ease;
 }
 
@@ -293,6 +294,7 @@ body {
 
 .slide-pane-viewport {
   flex: 1;
+  width: 100%;
   min-width: 0;
 }
 
@@ -305,12 +307,14 @@ body {
   background: var(--md-surface);
   border: 1px solid var(--md-outline);
   border-top: 4px solid var(--md-primary);
-  padding: 2.5rem 3rem;
+  padding: 1.85rem 2.4rem;
   box-shadow: var(--md-shadow);
+  width: 100%;
 }
 
 .cyber-pill, .section-tag, .badge-demo {
   display: inline-block;
+  align-self: flex-start;
   font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -361,12 +365,12 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .hook-card, .comp-box, .card, .concept-card, .rule-card, .warn-card {
   background: var(--md-surface-tonal);
-  padding: 1.5rem;
+  padding: 1.35rem 1.5rem;
   border: 1px solid var(--md-outline);
 }
 
@@ -462,7 +466,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -1058,6 +1062,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   padding: 0.75rem 2rem;
   background: var(--md-surface);
   border-top: 1px solid var(--md-outline);
@@ -1070,6 +1075,8 @@ code {
   padding: 0.55rem 1.25rem;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-btn-primary {
@@ -1078,14 +1085,49 @@ code {
   color: #fff;
 }
 
-.slide-counter { font-size: 0.9rem; color: var(--md-text-secondary); }
-.slide-title-hint { margin-left: 0.4rem; color: var(--md-primary); font-weight: 500; }
+.slide-counter {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0.9rem;
+  color: var(--md-text-secondary);
+}
+
+.slide-title-hint {
+  margin-left: 0.4rem;
+  color: var(--md-primary);
+  font-weight: 500;
+}
+
+/* Компактний режим нижньої панелі (коли центральний текст не вміщується в 1 рядок без переносу) */
+.bottom-nav.compact {
+  padding: 0.55rem 1rem;
+}
+
+.bottom-nav.compact .slide-title-hint {
+  display: none;
+}
+
+.bottom-nav.compact .nav-btn-label {
+  display: none;
+}
+
+.bottom-nav.compact .nav-btn {
+  padding: 0.5rem 0.95rem;
+  font-size: 1.05rem;
+  line-height: 1;
+}
 
 .slide-svg-wrap {
-  margin: 0.85rem 0 1.25rem;
+  margin: 0.45rem 0 0.85rem;
   border: 1px solid var(--md-outline);
   background: #FFFFFF;
-  padding: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slide-svg {
@@ -1254,11 +1296,12 @@ code {
 
 @media (max-width: 900px) {
   .stage {
-    padding: 0.75rem;
+    padding: 0.6rem;
   }
   .slide-pane-layout {
     flex-direction: column;
-    gap: 0.65rem;
+    align-items: stretch;
+    gap: 0.55rem;
   }
   .slide-pane-btns {
     flex-direction: row;
@@ -1268,15 +1311,19 @@ code {
   .pane-switch-btn {
     flex: 1;
     width: auto;
-    height: 52px;
+    height: 46px;
     flex-direction: row;
     gap: 0.45rem;
   }
   .slide-inner {
-    padding: 1.25rem 1.1rem;
+    padding: 1rem 1.1rem;
+    width: 100%;
   }
-  h1 { font-size: 1.65rem; }
-  h2 { font-size: 1.35rem; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.3rem; }
+}
+
+@media (max-width: 680px) {
   .hook-cards, .comparison-grid, .demo-grid-2, .concept-cards-2, .dh-stage, .chat-sim-grid, .warning-cards-3, .key-rules-grid {
     grid-template-columns: 1fr;
   }
@@ -1382,9 +1429,129 @@ code {
   color: var(--md-success);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 680px) {
   .dh-usage-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Адаптація під невисокі широкоформатні екрани (ноутбуки 1366x768, 1536x864 та горизонтальний режим) */
+@media (max-height: 860px) and (min-width: 901px) {
+  .stage {
+    padding: 0.55rem 1rem;
+  }
+  .slide-inner {
+    padding: 0.95rem 1.5rem;
+  }
+  .cyber-pill, .section-tag, .badge-demo {
+    margin-bottom: 0.35rem;
+    padding: 0.18rem 0.6rem;
+    font-size: 0.72rem;
+  }
+  h1 {
+    font-size: 1.9rem;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 1.38rem;
+    margin-bottom: 0.35rem;
+  }
+  .subtitle, .lead {
+    font-size: 0.96rem;
+    margin-bottom: 0.65rem;
+  }
+  .demo-header {
+    margin-bottom: 0.45rem;
+  }
+  .slide-svg-wrap {
+    margin: 0.25rem 0 0.55rem;
+    padding: 0.4rem 0.65rem;
+  }
+  .slide-svg {
+    max-height: 115px;
+  }
+  .slide[data-index="7"] .slide-svg {
+    max-height: 145px;
+  }
+  .slide[data-index="13"] .slide-svg {
+    max-height: 115px;
+  }
+  .slide[data-index="0"] .slide-svg,
+  .slide[data-index="1"] .slide-svg,
+  .slide[data-index="4"] .slide-svg,
+  .slide[data-index="11"] .slide-svg {
+    max-height: 52vh;
+  }
+  .comparison-grid, .demo-grid-2, .concept-cards-2, .key-rules-grid {
+    gap: 0.85rem;
+    margin-bottom: 0.55rem;
+  }
+  .hook-card, .comp-box, .card, .concept-card, .rule-card, .warn-card, .dh-column, .chat-node {
+    padding: 0.8rem 1rem;
+  }
+  .field-label {
+    margin: 0.4rem 0 0.2rem;
+    font-size: 0.8rem;
+  }
+  .cyber-input {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.88rem;
+  }
+  .hash-box {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.8rem;
+  }
+  .crack-time-panel {
+    padding: 0.55rem 0.75rem;
+    margin-bottom: 0.4rem;
+  }
+  .dh-usage-box {
+    margin-top: 0.45rem;
+    padding: 0.55rem 0.8rem;
+  }
+  .dh-usage-step {
+    padding: 0.45rem 0.6rem;
+  }
+  .tier-list, .checklist-interactive {
+    gap: 0.45rem;
+  }
+  .tier-item, .check-row {
+    padding: 0.6rem 0.9rem;
+  }
+  .color-step {
+    padding: 0.25rem 0;
+    font-size: 0.8rem;
+  }
+  .final-key-box {
+    padding: 0.4rem 0.5rem;
+    margin-top: 0.3rem;
+  }
+  .dh-key-result {
+    padding: 0.32rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  .dh-usage-header {
+    margin-bottom: 0.35rem;
+    font-size: 0.78rem;
+  }
+  .dh-usage-header strong {
+    font-size: 0.82rem;
+  }
+  .cipher-output {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.86rem;
+    margin-bottom: 0.45rem;
+  }
+  .decrypt-status {
+    margin-top: 0.35rem;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.82rem;
+  }
+  .cta-row {
+    margin-top: 0.45rem;
+  }
+  .bottom-nav {
+    padding: 0.4rem 1.5rem;
   }
 }
 .toast-section-btn {
@@ -1437,4 +1604,63 @@ code {
   background: var(--md-primary);
   color: #FFFFFF;
   border-color: var(--md-primary);
+}
+/* Титульний слайд: QR-код збоку */
+.hero-top-split {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-text-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-text-col .subtitle {
+  margin-bottom: 0;
+}
+
+.hero-qr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem;
+  background: var(--md-surface);
+  border: 2px solid var(--md-primary);
+  box-shadow: var(--md-shadow);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.hero-qr-card:hover {
+  background: var(--md-primary-container);
+}
+
+.hero-qr-svg {
+  width: 136px;
+  height: 136px;
+  display: block;
+}
+
+.hero-qr-caption {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--md-on-primary-container);
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .hero-top-split {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-qr-card {
+    align-self: flex-start;
+  }
 }

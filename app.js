@@ -108,6 +108,7 @@ function goToSlide(index) {
   if (totNumEl) totNumEl.textContent = totalSlides;
   if (hintEl) hintEl.textContent = `— ${SLIDE_TITLES[currentSlide]}`;
 
+  updateBottomBarFit();
   updateTopBarIndicators();
 
   const noteEl = document.getElementById("speakerNoteContent");
@@ -117,6 +118,22 @@ function goToSlide(index) {
   updateCliSuggestionForSlide(currentSlide);
   syncActiveSlideBoxMode("diagram");
 }
+
+function updateBottomBarFit() {
+  const bottomNav = document.getElementById("bottomNav");
+  const slideCounter = document.getElementById("slideCounter");
+  if (!bottomNav || !slideCounter) return;
+
+  // Спочатку вмикаємо повний режим, щоб виміряти реальну ширину тексту в один рядок
+  bottomNav.classList.remove("compact");
+
+  // Якщо центральний текст ширший за доступний контейнер (не влазить в 1 рядок) — перемикаємо у компактний режим (лише "N / 15" та стрілки "←" / "→")
+  if (slideCounter.scrollWidth > slideCounter.clientWidth) {
+    bottomNav.classList.add("compact");
+  }
+}
+
+window.addEventListener("resize", updateBottomBarFit);
 
 function updateTopBarIndicators() {
   document.querySelectorAll("#topProgressStrip .prog-seg").forEach((seg) => {
